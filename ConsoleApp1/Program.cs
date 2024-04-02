@@ -23,6 +23,25 @@ namespace ConsoleApp1
             }
             Console.WriteLine();
 
+            // Создаем новый массив, содержащий строки длиной <= 3 символа
+            string[] newArray = FilterShortStrings(originalArray);
+
         }
-    }
+
+        // Функция для фильтрации строк длиной <= 3 символа
+        static string[] FilterShortStrings(string[] inputArray)
+        {
+            string[] resultArray = new string[inputArray.Length];
+            int count = 0;
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                if (inputArray[i].Length <= 3)
+                {
+                    resultArray[count] = inputArray[i];
+                    count++;
+                }
+            }
+
+        }
 }
