@@ -19,9 +19,9 @@ namespace ConsoleApp1
             Console.WriteLine("Source array:");
             foreach (string item in originalArray)
             {
-                Console.Write(item, " ");
+                Console.Write(item, ", ");
             }
-
+            Console.WriteLine();
 
         }
     }
