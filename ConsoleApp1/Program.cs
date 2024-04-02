@@ -14,18 +14,22 @@ namespace ConsoleApp1
             Console.WriteLine("Enter lines separated by commas:");
             string input = Console.ReadLine();
             string[] originalArray = input.Split(',');
+            Console.WriteLine("\n");
 
             // Выводим исходный массив
             Console.WriteLine("Source array:");
             foreach (string item in originalArray)
             {
-                Console.Write(item, ", ");
+                Console.Write(item + ", ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             // Создаем новый массив, содержащий строки длиной <= 3 символа
             string[] newArray = FilterShortStrings(originalArray);
 
+            // Выводим новый массив
+            PrintArray(newArray);
+            Console.WriteLine("\n");
         }
 
         // Функция для фильтрации строк длиной <= 3 символа
@@ -43,5 +47,21 @@ namespace ConsoleApp1
                 }
             }
 
+            // Уменьшаем размер массива до фактического количества элементов
+            Array.Resize(ref resultArray, count);
+            return resultArray;
+
         }
+
+        // Функция для вывода массива на экран
+        static void PrintArray(string[] array)
+        {
+            Console.WriteLine("New array:");
+            foreach (string item in array)
+            {
+                Console.Write(item + ", ");
+               
+            }
+        }
+    }
 }
