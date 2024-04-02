@@ -10,7 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            
+            // Введите исходный массив строк
+            Console.WriteLine("Enter lines separated by commas:");
+            string input = Console.ReadLine();
+            string[] originalArray = input.Split(',');
+
+            // Выводим исходный массив
+            Console.WriteLine("Source array:");
+            foreach (string item in originalArray)
+            {
+                Console.Write(item, " ");
+            }
+
 
         }
     }
